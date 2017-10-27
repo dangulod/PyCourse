@@ -10,7 +10,7 @@ Son instrucciones que especifican cómo realizar un cálculo. Pero existen instr
 Leer --> Procesar --> Escribir
 ```
 
-## ¿Qué es un Python?
+## ¿Qué es Python?
 
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Es administrado por la [Python Software Foundation](https://www.python.org/psf/)
 
@@ -18,36 +18,83 @@ Python es un lenguaje de programación multiparadigma. Esto significa que más q
 
 ### Tipos de datos
 
+Podemos resumir los tipos de datos en esta tabla:
+
 Tipo | Clase | Notas | Ejemplo
 -- | -- | -- | -- 
-str	| Cadena | Inmutable | 'Cadena'
+**str**	| Cadena | Inmutable | 'Cadena'
 unicode	| Cadena | Versión Unicode de str	| u'Cadena'
-list | Secuencia | Mutable, puede contener objetos de diversos tipos | [4.0, 'Cadena', True]
+**list** | **Secuencia** | **Mutable, puede contener objetos de diversos tipos** | **[4.0, 'Cadena', True]**
 tuple	| Secuencia	| Inmutable, puede contener objetos de diversos tipos | (4.0, 'Cadena', True)
 set	| Conjunto | Mutable, sin orden, no contiene duplicados	| set([4.0, 'Cadena', True])
 frozenset	| Conjunto | Inmutable, sin orden, no contiene duplicados | frozenset([4.0, 'Cadena', True])
 dict | Mapping | Grupo de pares clave:valor | {'key1': 1.0, 'key2': False}
 int	| Número entero	| Precisión fija, convertido en long en caso de overflow | 42
-long | Número entero | Precisión arbitraria | 42L ó 456966786151987643L
-float	| Número decimal | Coma flotante de doble precisión | 3.1415927
+**float**	| **Número decimal** | **Coma flotante de doble precisión** | **3.1415927**
 complex	| Número complejo	| Parte real y parte imaginaria j | (4.5 + 3j)
-bool | Booleano | Valor booleano verdadero o falso | True o False
+**bool** | **Booleano** | **Valor booleano verdadero o falso** | **True o False**
 
+*Mutable*: si su contenido (o dicho valor) puede cambiarse en tiempo de ejecución
 
+*Inmutable*: si su contenido (o dicho valor) no puede cambiarse en tiempo de ejecución
 
-### Principales librerias
+### Librerias
 
-Las librerias
+Las librerias se importan aparte, cargaremos aquellas que vayamos a usar al principio del script, se pueden importar de varias formas:
+
+Cargar una libreria
+
+```{python}
+import datetime as dt
+```
+
+Cargar todas las funciones de una libreria
+
+```{python}
+from datetime import *
+```
+
+Cargar un modulo de una libreria
+
+```{python}
+from datetime import date
+```
 
 #### Numpy
 
+[Documentacion](https://docs.scipy.org/doc/numpy/reference/routines.html)
+
+```{python}
+import numpy as np
+```
+
+Es la libreria por escelencia de Python de computacion, contiene entre otras:
+
+  * Arrays objects
+  * Funciones para manipular arrays
+  * Algebra lineal, generación de numeros aleatorios...
+
+Conocer esta libreria es **fundamental** para trabajar con **Spark**
+
+[NumPy for Matlab users](https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html)
+
 #### Pandas
+
+[Documentacion](http://pandas.pydata.org/pandas-docs/stable/)
+
+```{python}
+import pandas as pd
+```
+
+Pandas provee a Python de estructuras rapidas y flexibles, diseñadas para trabajar con datos relacionales facil e intuitivamente
+
+[Pandas en 10 minutos](http://pandas.pydata.org/pandas-docs/stable/10min.html)
 
 #### Scipy
 
 ## Primeros pasos en Python
 
-Nuestro primer programa *'Hello World!'*:
+Nuestra primera función *'Hello World!'*:
 
 ```{python}
 print('Hello World')
@@ -66,8 +113,120 @@ Y la llamamos:
 hw()
 ```
 
-Comentando nuestros scripts:
+Existen dos formas de crear una función en Python:
+
+```{python}
+exponencial_1 = lambda x, y: x ** y
+
+exponencial_1(2, 3)
+
+def exponencial_2(x, y):
+  return(x ** y)
+
+exponencial_2(2, 3)
+```
+
+Las funciones lambda, son funciones que no tienen nombre y que serán de utilidad más adelante
+
+El bucle **for** recorre un objeto iterable, como una lista, una tupla o un generador, y por cada elemento del iterable ejecuta el bloque de código interno
+
+```{python}
+x = 0
+
+for i in range(0, 10):
+  if (i == 5): 
+    continue
+  else:
+    x += i
+    
+x == 9 + 8 + 7 + 6 + 4 + 3 + 2 + 1 + 0
+```
+
+El bucle **while** evalúa una condición y, si es verdadera, ejecuta el bloque de código interno. Continúa evaluando y ejecutando mientras la condición sea verdadera
+
+```{python}
+i = 0
+
+while i < 10:
+  print(i)
+  i += 1
+```
+
+### Introducción a las clases
+
+En informática, una clase es una plantilla para la **creación de objetos de datos según un modelo predefinido**
+
+Permiten abstraer los datos y sus operaciones asociadas al modo de una caja negra
+
+Las clases se componen de elementos, llamados genéricamente «miembros», de varios tipos:
+
+  * **atributos**: almacenan el estado de la clase por medio de variables, estructuras de datos e incluso otras clases.
+  * **métodos**: subrutinas de manipulación de dichos datos.
+
+El siguiente ejemplo muestra como crear una clase
+
+```{python}
+class Person:
+  
+  '''
+  La clase persona es un objeto, que tiene 2 atributos (nombre, edad).
+  
+  Hemos encapsulado el codigo en la clase persona. 
+  
+  Toda clase tiene un constructor que crea la clase
+  '''
+  
+  # Constructor -----------------------------------------------------
+  
+  def __init__(self, nombre, edad):
+    self.nombre = nombre
+    self.edad = edad
+  
+  # Metodos (Funciones) ---------------------------------------------
+  
+  # Devuelve el atributo nombre
+  def get_nombre(self):
+    return(self.nombre)
+  
+  # Devuelve el atributo edad
+  def get_edad(self):
+    return(self.edad)
+  
+  # Modifica el atributo edad
+  def set_edad(self, edad):
+    self.edad = edad
+  
+  # Modifica el atributo nombre
+  def set_nombre(self, nombre):
+    self.nombre = nombre
+  
+  # Pasan x años
+  def year(self, ano):
+    self.set_edad(self.get_edad() + ano)
+```
+
+Ahora podemos usar la clase, para ello creamos un objeto de la clase *Person* a traves del **constructor**
+
+```{python}
+x = Person("Adam", 30)
+dir(x)
+x.get_nombre()
+x.get_edad()
+x.year(10)
+x.get_edad()
+```
+
+[Ejemplo 1](https://github.com/jeffrey-liang/quantitative/blob/609d2ed816d1c3e23592a1805a29f1634097277e/quantitative/core/backtest.py)
+
+[Ejemplo 2](https://github.com/dangulod/DECT/blob/master/samples/scenario.py)
 
 ## Numpy
 
+Libreria modulos
+
 ### Arrays
+
+
+## Scipy
+
+[Documentacion](https://docs.scipy.org/doc/scipy/reference/)

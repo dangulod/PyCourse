@@ -1,0 +1,73 @@
+
+
+# PyCourse
+
+## ¿Qué es un programa?
+
+Son instrucciones que especifican cómo realizar un cálculo. Pero existen instrucciones generales que son comunes a cualquier programa, no importa cuan compliado sea. Siempre, subdimos en subtareas que se resumen en:
+
+```{r}
+Leer --> Procesar --> Escribir
+```
+
+## ¿Qué es un Python?
+
+Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Es administrado por la [Python Software Foundation](https://www.python.org/psf/)
+
+Python es un lenguaje de programación multiparadigma. Esto significa que más que forzar a los programadores a adoptar un estilo particular de programación, permite varios estilos: **programación orientada a objetos**, **programación imperativa** y **programación funcional**
+
+### Tipos de datos
+
+Tipo | Clase | Notas | Ejemplo
+-- | -- | -- | -- 
+str	| Cadena | Inmutable | 'Cadena'
+unicode	| Cadena | Versión Unicode de str	| u'Cadena'
+list | Secuencia | Mutable, puede contener objetos de diversos tipos | [4.0, 'Cadena', True]
+tuple	| Secuencia	| Inmutable, puede contener objetos de diversos tipos | (4.0, 'Cadena', True)
+set	| Conjunto | Mutable, sin orden, no contiene duplicados	| set([4.0, 'Cadena', True])
+frozenset	| Conjunto | Inmutable, sin orden, no contiene duplicados | frozenset([4.0, 'Cadena', True])
+dict | Mapping | Grupo de pares clave:valor | {'key1': 1.0, 'key2': False}
+int	| Número entero	| Precisión fija, convertido en long en caso de overflow | 42
+long | Número entero | Precisión arbitraria | 42L ó 456966786151987643L
+float	| Número decimal | Coma flotante de doble precisión | 3.1415927
+complex	| Número complejo	| Parte real y parte imaginaria j | (4.5 + 3j)
+bool | Booleano | Valor booleano verdadero o falso | True o False
+
+
+
+### Principales librerias
+
+Las librerias
+
+#### Numpy
+
+#### Pandas
+
+#### Scipy
+
+## Primeros pasos en Python
+
+Nuestro primer programa *'Hello World!'*:
+
+```{python}
+print('Hello World')
+```
+
+Como definimos una función con nuestra sentencia,
+
+```{python}
+def hw():
+  print('Hello World!')
+```
+
+Y la llamamos:
+
+```{python}
+hw()
+```
+
+Comentando nuestros scripts:
+
+## Numpy
+
+### Arrays

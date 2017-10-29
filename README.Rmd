@@ -40,6 +40,12 @@ complex	| Número complejo	| Parte real y parte imaginaria j | (4.5 + 3j)
 
 ### Librerias
 
+Instalar librerias
+
+```{python}
+python -m pip install bt
+```
+
 Las librerias se importan aparte, cargaremos aquellas que vayamos a usar al principio del script, se pueden importar de varias formas:
 
 Cargar una libreria
@@ -86,7 +92,7 @@ Conocer esta libreria es **fundamental** para trabajar con **Spark**
 import pandas as pd
 ```
 
-Pandas provee a Python de estructuras rapidas y flexibles, diseñadas para trabajar con datos relacionales facil e intuitivamente
+Pandas provee a Python de estructuras rapidas y flexibles, diseñadas para trabajar con datos relacionales facil e intuitivamente a través del **DataFrame**
 
 [Pandas en 10 minutos](http://pandas.pydata.org/pandas-docs/stable/10min.html)
 

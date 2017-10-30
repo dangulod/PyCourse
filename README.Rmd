@@ -66,38 +66,6 @@ Cargar un modulo de una libreria
 from datetime import date
 ```
 
-#### Numpy
-
-[Documentacion](https://docs.scipy.org/doc/numpy/reference/routines.html)
-
-```{python}
-import numpy as np
-```
-
-Es la libreria por escelencia de Python de computacion, contiene entre otras:
-
-  * Arrays objects
-  * Funciones para manipular arrays
-  * Algebra lineal, generación de numeros aleatorios...
-
-Conocer esta libreria es **fundamental** para trabajar con **Spark**
-
-[NumPy for Matlab users](https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html)
-
-#### Pandas
-
-[Documentacion](http://pandas.pydata.org/pandas-docs/stable/)
-
-```{python}
-import pandas as pd
-```
-
-Pandas provee a Python de estructuras rapidas y flexibles, diseñadas para trabajar con datos relacionales facil e intuitivamente a través del **DataFrame**
-
-[Pandas en 10 minutos](http://pandas.pydata.org/pandas-docs/stable/10min.html)
-
-#### Scipy
-
 ## Primeros pasos en Python
 
 Nuestra primera función *'Hello World!'*:
@@ -228,9 +196,106 @@ x.get_edad()
 
 ## Numpy
 
-Libreria modulos
+**Enlaces de interés:**
+
+[Documentacion](https://docs.scipy.org/doc/numpy/reference/routines.html)
+
+[Quick Start](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+
+[NumPy for Matlab users](https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html)
+
+```{python}
+import numpy as np
+```
+
+Es la **libreria por escelencia de Python** de computacion, contiene entre otras cosas:
+
+  * Arrays
+  * Funciones para manipular arrays
+  * Algebra lineal, generación de numeros aleatorios...
 
 ### Arrays
+
+El **el objeto principal de numpy** es el **array**. Es una tabla de elementos del mismo tipo, indexados por una tupla de enteros. Las dimensiones en en Numpy se llaman *axes* y el número de axes se llama *rank*
+
+Por ejemplo:
+
+  1. Un array de rank 1
+
+```{python}
+[1, 2, 3]
+```
+
+  2. Un array de rank 2. El primer axes tiene una longitud de 3 y el segundo tambien
+  
+```{python}
+[[1., 0., 3.],
+ [5., 7., 1.]]
+```
+
+
+  3. Un array de rank 2. El primer axes tiene una longitud de 3, el segundo tambien, pero el tercer axes tiene una longitud de dos
+
+```{python}
+[[1., 0., 3.],
+ [5., 7., 1.],
+ [7., 9.]]
+```
+
+#### Creación de arrays
+
+Existen muchas maneras de crear arrays (Revisar documentación). No obstante un error habitual es el siguiente:
+
+```{python}
+a = np.array(1,2,3,4)    # WRONG
+a = np.array([1,2,3,4])  # RIGHT
+```
+
+Se destacan:
+
+```{python}
+np.arange( 10, 30, 5 )
+np.arange( 0, 2, 0.3 )     
+np.linspace( 0, 2, 9 )
+```
+
+#### Operaciones básicas
+
+Las operaciones básicas sobre un array se aplican **elemento a elemento**
+
+```{python}
+a = np.array( [20,30,40,50] )
+b = np.arange( 4 )
+c = a-b
+```
+
+> array([20, 29, 38, 47])
+
+#### Funciones universales
+
+Numpy provee funciones matemáticas, tales como *sin*, *cos*, *sqrt*, etc..
+
+```{python}
+a = np.array( [20,30,40,50] )
+np.sqrt(a)
+np.sin(b)
+```
+
+#### Generación de números aleatorios
+
+[Documentacion](https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.random.html)
+
+## Pandas
+
+[Documentacion](http://pandas.pydata.org/pandas-docs/stable/)
+
+```{python}
+import pandas as pd
+```
+
+Pandas provee a Python de estructuras rapidas y flexibles, diseñadas para trabajar con datos relacionales facil e intuitivamente a través del **DataFrame**
+
+[Pandas en 10 minutos](http://pandas.pydata.org/pandas-docs/stable/10min.html)
 
 
 ## Scipy

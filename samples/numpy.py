@@ -76,7 +76,7 @@ b[2, 3]
 b[0:2, 2:5]
 b[:, 5]
 
-## ¡ OjO ! Parte avanzada
+## ndimensionales
 
 b = np.arange(1296).reshape(6,6,6,6)
 b[:4,2:4,3:5,1:4]
@@ -103,6 +103,8 @@ c = np.arange(100)
 list(map(lambda x: x +  np.pi, c))
 c[list(map(lambda x: x < 5, c))]
 c[list(map(lambda x: x < 5 and x > 90, c))]
+
+list(map(lambda x, y, z, a, b, c: x + y + z +a + b+ c,range(10), range(10), range(10), range(10), range(10), range(10)))
 
 # modulo np.random para generar arrays de numeros aleatorios
 

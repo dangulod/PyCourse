@@ -289,14 +289,19 @@ np.sin(b)
 
 [Documentacion](http://pandas.pydata.org/pandas-docs/stable/)
 
+[Pandas en 10 minutos](http://pandas.pydata.org/pandas-docs/stable/10min.html)
+
 ```{python}
 import pandas as pd
 ```
 
 Pandas provee a Python de estructuras rapidas y flexibles, diseñadas para trabajar con datos relacionales facil e intuitivamente a través del **DataFrame**
 
-[Pandas en 10 minutos](http://pandas.pydata.org/pandas-docs/stable/10min.html)
+El **DataFrame** es un objeto bidimensional, mutable, con datos hetereogeneos, estructurados y con etiquetas (filas y columnas). Puede ser visto como un contenedor de **series** 
 
+[pandas.Series](http://pandas.pydata.org/pandas-docs/stable/api.html#series)
+
+[**pandas.DataFrame**](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame)
 
 ## Scipy
 
